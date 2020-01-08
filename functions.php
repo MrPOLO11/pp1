@@ -15,3 +15,16 @@ function largest($arr) {
     }
     return $largest;
 }
+
+function removeDups($arr) {
+    //Below is a single line of code for solving function
+    //$result = array_unique($arr);
+    $result = [];
+    foreach($arr as $val) {
+        if(!in_array($val, $result)) {
+            array_push($result, $val);
+        }
+    }
+    return $result;
+}
+

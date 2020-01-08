@@ -29,6 +29,9 @@
     printArr($numbers);
 
     echo "<p>Largest number in the array is: ".largest($numbers)."</p>";
+
+    //$noDups = removeDups($numbers);
+    printArr(removeDups($numbers));
     ?>
 </body>
 </html>

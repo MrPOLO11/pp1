@@ -28,3 +28,25 @@ function removeDups($arr) {
     return $result;
 }
 
+function distribution($arr) {
+    //Shortcut way for creating function:
+    //sort($arr);
+    //return array_count_values($arr);
+    sort($arr);
+    $keys = removeDups($arr);
+    $values = [];
+    $count = 0;
+    $index = 0;
+    foreach ($keys as $k) {
+        foreach ($arr as $a) {
+            if($a === $k) {
+                $count++;
+            }
+        }
+        $values[$index] = $count;
+        $count = 0;
+        $index++;
+    }
+    $result = array_combine($keys, $values);
+    return $result;
+}

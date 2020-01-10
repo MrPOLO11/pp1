@@ -26,12 +26,26 @@
     <?php
     $numbers = [7, 9, 8, 9, 8, 8, 6];
 
+    echo "<p>Print original array: </p>";
     printArr($numbers);
 
     echo "<p>Largest number in the array is: ".largest($numbers)."</p>";
 
     //$noDups = removeDups($numbers);
+    echo "<p>Print non-duplicates array from original array: </p>";
     printArr(removeDups($numbers));
+
+    echo "<p>Use of Distribution method: </p>";
+    $numbersA = distribution($numbers);
+
+    $result = "[";
+    foreach($numbersA as $key => $val) {
+        $result .= $key."=>".$val.",";
+    }
+
+    rtrim($result, ",");
+    $result .= "]";
+    echo "<p>$result</p>";
     ?>
 </body>
 </html>
